@@ -19,7 +19,10 @@ export class AuthorInput extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     const author = {...this.state, id: uuid() };
+    //onclick it calls this action 
+    console.log(1) 
     this.props.addAuthor(author);
+   //clear the input /state 
     this.setState({
       authorName: ''
     });
@@ -41,5 +44,5 @@ export class AuthorInput extends Component {
     );
   }
 };
-
+///dispatch(addAuthor (author)
 export default connect(null, { addAuthor })(AuthorInput);
